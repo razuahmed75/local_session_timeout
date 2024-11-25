@@ -88,7 +88,7 @@ class _SessionTimeoutManagerState extends State<SessionTimeoutManager>
 
     if (_isListensing == true &&
         (state == AppLifecycleState.inactive ||
-            state == AppLifecycleState.paused)) {
+            state == AppLifecycleState.paused || state == AppLifecycleState.detached || state == AppLifecycleState.hidden)) {
       if (widget._sessionConfig.invalidateSessionForAppLostFocus != null &&
           _appLostFocusTimestamp == null) {
         _appLostFocusTimestamp = DateTime.now();
